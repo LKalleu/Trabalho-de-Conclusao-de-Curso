@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-image: url(../galeria/background.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+.aaa {
+  width: 360px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(25, 25, 25, 0.5);
+  text-align: center;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 5px 10px 18px #888888;
+}
+
+.aaa h1 {
+  font-size: 40px;
+  margin-top: 125px;
+  margin-bottom: 60px;
+}
+
+.tbox {
+  width: 260px;
+  height: 40px;
+  background: white;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+.tbox input {
+  background: none;
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 90%;
+  line-height: 37px;
+  font-size: 14px;
+  color: black;
+}
+
+.botao {
+  width: 260px;
+  height: 40px;
+  background: #3498db;
+  border-radius: 10px;
+  margin: 14px auto;
+  display: block;
+  font-size: 16px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.b1{
+  display: block;
+  width: 260px;
+  padding: 10px 0;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  margin: auto;
+  transition: 0.4s all;
+}
+
+a:hover{
+  background: #00000040;
+}
