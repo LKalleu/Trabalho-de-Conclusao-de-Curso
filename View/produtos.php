@@ -47,13 +47,13 @@ $tipo=$base->query("SELECT * FROM tipoproduto")->fetchAll(PDO::FETCH_OBJ);
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="home.php">Home</a></li>
         <li><a href="produtos.php">Produtos</a></li>
-        <li><a href="produtos.php">Histórico</a></li>
+        <li><a href="historico.php">Histórico</a></li>
         <li><a href="devedor.php">Devedor</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="home.php">Home</a></li>
         <li><a href="produtos.php">Produtos</a></li>
-        <li><a href="produtos.php">Histórico</a></li>
+        <li><a href="historico.php">Histórico</a></li>
         <li><a href="devedor.php">Devedor</a></li>
       </ul>
     </div>

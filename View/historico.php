@@ -190,7 +190,7 @@ $fornecedor=$base->query("SELECT * FROM fornecedor")->fetchAll(PDO::FETCH_OBJ);
         </tr>
       </thead>
 
-      <tbody class-'hide-on-med-and-up' style='border-bottom: 2px solid grey;'>
+      <tbody class='hide-on-med-and-up' style='border-bottom: 2px solid grey;'>
       <tr>
       <td> $historico->dataRecebimento </td>
       <td> $historico->fornecedor </td>
