@@ -151,8 +151,8 @@ $fornecedor=$base->query("SELECT * FROM fornecedor")->fetchAll(PDO::FETCH_OBJ);
   <!-- Tabela com Devedores -->
 
 <div class="row" style="margin-top: 20px">
-  <table class="responsive-table col s12 m10 offset-m1 white" style="border-radius: 10px;">
-    <thead>
+  <table class="responsive-table col s12 m10 offset-m1 white" style="border-radius: 10px; border: 5px solid #37474f;">
+    <thead class="hide-on-small-only">
       <tr>
         <th>Data de Recebimento</th>
         <th>Fornecedor</th>
@@ -161,7 +161,7 @@ $fornecedor=$base->query("SELECT * FROM fornecedor")->fetchAll(PDO::FETCH_OBJ);
       </tr>
     </thead>
 
-    <tbody>
+    <tbody class="hide-on-small-only">
       <?php
       foreach ($registro as $historico) :
         echo
@@ -176,6 +176,31 @@ $fornecedor=$base->query("SELECT * FROM fornecedor")->fetchAll(PDO::FETCH_OBJ);
       endforeach;
       ?>
     </tbody>
+
+    <?php
+    foreach ($registro as $historico) :
+      echo
+      "
+      <thead class='hide-on-med-and-up' style='border-bottom: 2px solid grey;'>
+        <tr>
+          <th>Data de Recebimento</th>
+          <th>Fornecedor</th>
+          <th>Produtos</th>
+          <th>Quantidade</th>
+        </tr>
+      </thead>
+
+      <tbody class-'hide-on-med-and-up' style='border-bottom: 2px solid grey;'>
+      <tr>
+      <td> $historico->dataRecebimento </td>
+      <td> $historico->fornecedor </td>
+      <td> $historico->produtos </td>
+      <td> $historico->quantidade </td>
+      </tr>
+      </tbody>
+      ";
+    endforeach;
+    ?>
   </table>
 </div>
 

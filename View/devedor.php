@@ -130,8 +130,8 @@ $registro=$base->query("SELECT * FROM devedor")->fetchAll(PDO::FETCH_OBJ);
   <!-- Tabela com Devedores -->
 
 <div class="row" style="margin-top: 20px">
-  <table class="responsive-table col s12 m10 offset-m1 white" style="border-radius: 10px;">
-    <thead>
+  <table class="responsive-table col s12 m10 offset-m1 white" style="border-radius: 10px; border: 5px solid #37474f;">
+    <thead class="hide-on-small-only">
       <tr>
         <th>Nome</th>
         <th>Email</th>
@@ -142,7 +142,7 @@ $registro=$base->query("SELECT * FROM devedor")->fetchAll(PDO::FETCH_OBJ);
       </tr>
     </thead>
 
-    <tbody>
+    <tbody class="hide-on-small-only">
       <?php
       foreach ($registro as $pessoa) :
         echo
@@ -159,6 +159,36 @@ $registro=$base->query("SELECT * FROM devedor")->fetchAll(PDO::FETCH_OBJ);
       endforeach;
       ?>
     </tbody>
+
+    <?php
+    foreach ($registro as $pessoa) :
+      echo
+      "
+      <thead class='hide-on-med-and-up' style='border-bottom: 2px solid grey;'>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Contato</th>
+          <th>Itens Comprados</th>
+          <th>Excluir</th>
+          <th>Editar</th>
+        </tr>
+      </thead>
+
+      <tbody class='hide-on-med-and-up' style='border-bottom: 2px solid grey;'>
+      <tr>
+      <td> $pessoa->nome </td>
+      <td> $pessoa->email </td>
+      <td> $pessoa->contato </td>
+      <td> <a class='green-text' href='../Controller/deletar.php?id= $pessoa->id'>Exibir</a> </td>
+      <td> <a class='red-text' href='../Controller/deletar.php?id= $pessoa->id'>Deletar</a> </td>
+      <td> <a class='blue-text' href='../Controller/editar.php?id= $pessoa->id & nome= $pessoa->nome & email= $pessoa->email & senha= $pessoa->senha & contato= $pessoa->contato & rua= $pessoa->rua & bairro= $pessoa->bairro & numeracao= $pessoa->numeracao & cep= $pessoa->cep'>Editar</a></td>
+      </tr>
+      </tbody>
+      ";
+    endforeach;
+    ?>
+
   </table>
 </div>
 

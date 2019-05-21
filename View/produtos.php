@@ -136,8 +136,8 @@ $tipo=$base->query("SELECT * FROM tipoproduto")->fetchAll(PDO::FETCH_OBJ);
   <!-- Tabela com Devedores -->
 
 <div class="row" style="margin-top: 20px">
-  <table class="responsive-table col s12 m10 offset-m1 white" style="border-radius: 10px;">
-    <thead>
+  <table class="responsive-table col s12 m10 offset-m1 white" style="border-radius: 10px; border: 5px solid #37474f;">
+    <thead class="hide-on-small-only">
       <tr>
         <th>Data de Recebimento</th>
         <th>Fornecedor</th>
@@ -146,7 +146,7 @@ $tipo=$base->query("SELECT * FROM tipoproduto")->fetchAll(PDO::FETCH_OBJ);
       </tr>
     </thead>
 
-    <tbody>
+    <tbody class="hide-on-small-only">
       <?php
       foreach ($produtos as $valores) :
         echo
@@ -161,6 +161,31 @@ $tipo=$base->query("SELECT * FROM tipoproduto")->fetchAll(PDO::FETCH_OBJ);
       endforeach;
       ?>
     </tbody>
+
+    <?php
+    foreach ($produtos as $valores) :
+      echo
+      "
+      <thead class='hide-on-med-and-up' style='border-bottom: 2px solid grey;'>
+        <tr>
+          <th>Data de Recebimento</th>
+          <th>Fornecedor</th>
+          <th>Produtos</th>
+          <th>Marca</th>
+        </tr>
+      </thead>
+
+      <tbody class='hide-on-med-and-up' style='border-bottom: 2px solid grey;'>
+      <tr>
+      <td> $valores->nome </td>
+      <td> $valores->tipo </td>
+      <td> $valores->preco </td>
+      <td> $valores->marca </td>
+      </tr>
+      </tbody>
+      ";
+    endforeach;
+    ?>
   </table>
 </div>
 

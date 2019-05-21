@@ -5,12 +5,6 @@
   font-family: Arial, sans-serif;
 }
 
-body {
-  background-image: url(../galeria/background.jpg);
-  background-size: auto;
-  background-repeat: no-repeat;
-}
-
 .aaa {
   width: 360px;
   height: 600px;
