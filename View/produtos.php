@@ -79,7 +79,7 @@ $tipo=$base->query("SELECT * FROM tipoproduto")->fetchAll(PDO::FETCH_OBJ);
             <div class="input-field col s12">
               <form class="">
               <select style="margin-top: 5px; margin-bottom: 5px;">
-                <option value="" disabled selected>Escolha um dos fornecedores...</option>
+                <option value="" disabled selected>Escolha o tipo de produto...</option>
                 <?php
                 foreach ($tipo as $valores) :
                   echo
