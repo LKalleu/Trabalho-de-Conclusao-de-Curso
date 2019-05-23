@@ -62,14 +62,14 @@ $tipo=$base->query("SELECT * FROM tipoproduto")->fetchAll(PDO::FETCH_OBJ);
   <!-- Botão para adicionar novo Devedor -->
   <div class="fixed-action-btn horizontal">
     <a class="btn-floating btn-large red modal-trigger" href="#modal1">
-      <i class="large material-icons">mode_edit</i>
+      <i class="large material-icons">add</i>
     </a>
   </div>
 
   <!-- Modal Devedor -->
   <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <h4 class="center">Adicionar Devedor</h4>
+      <h4 class="center">Adicionar Novo Produto</h4>
       <form action="../Controller/insert.php" method="POST">
         <div class="col s12">
           <div class="col s12">
@@ -110,38 +110,15 @@ $tipo=$base->query("SELECT * FROM tipoproduto")->fetchAll(PDO::FETCH_OBJ);
     </div>
   </div>
 
-
-  <!-- Detalhes -->
-  <div id="modal2" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4 class="center">Detalhes</h4>
-
-    </div>
-    <div class="modal-footer">
-      <input class="modal-action modal-close waves-effect waves-green btn-flat" type="submit" name="enviar" value="Pesquisar">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
-    </div>
-  </div>
-
-  <div class="fixed-action-btn horizontal click-to-toggle">
-    <a class="btn-floating btn-large red">
-      <i class="material-icons">menu</i>
-    </a>
-    <ul>
-      <li><a class="btn-floating green modal-trigger" href="#modal1"><i class="material-icons">add</i></a></li>
-      <li><a class="btn-floating yellow darken-1 modal-trigger" href="#modal2"><i class="material-icons">assignment</i></a></li>
-    </ul>
-  </div>
-
   <!-- Tabela com Devedores -->
 
 <div class="row" style="margin-top: 20px">
   <table class="responsive-table col s12 m10 offset-m1 white" style="border-radius: 10px; border: 5px solid #37474f;">
     <thead class="hide-on-small-only">
       <tr>
-        <th>Data de Recebimento</th>
-        <th>Fornecedor</th>
-        <th>Produtos</th>
+        <th>Nome</th>
+        <th>Tipo</th>
+        <th>Preço</th>
         <th>Marca</th>
       </tr>
     </thead>
