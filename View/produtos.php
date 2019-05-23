@@ -9,6 +9,7 @@ include '../Model/config.php';
 
 $produtos=$base->query("SELECT * FROM produto")->fetchAll(PDO::FETCH_OBJ);
 $tipo=$base->query("SELECT * FROM tipoproduto")->fetchAll(PDO::FETCH_OBJ);
+$fornecedor=$base->query("SELECT * FROM fornecedor")->fetchAll(PDO::FETCH_OBJ);
 
 ?>
 <!DOCTYPE html>
@@ -94,6 +95,24 @@ $tipo=$base->query("SELECT * FROM tipoproduto")->fetchAll(PDO::FETCH_OBJ);
               </form>
             </div>
 
+            <div class="input-field col s12">
+              <form class="">
+              <select style="margin-top: 5px; margin-bottom: 5px;">
+                <option value="" disabled selected>Escolha o fornecedor...</option>
+                <?php
+                foreach ($fornecedor as $valores) :
+                  echo
+                  "
+                  <option value=''>
+                   $valores->nome
+                  </option>
+                  ";
+                endforeach;
+                ?>
+              </select>
+              </form>
+            </div>
+
             <label>Preço:</label>
             <input type="text" name="preco" placeholder="R$ ">
 
@@ -120,6 +139,7 @@ $tipo=$base->query("SELECT * FROM tipoproduto")->fetchAll(PDO::FETCH_OBJ);
         <th>Tipo</th>
         <th>Preço</th>
         <th>Marca</th>
+        <th>Forncedor</th>
       </tr>
     </thead>
 
@@ -133,6 +153,7 @@ $tipo=$base->query("SELECT * FROM tipoproduto")->fetchAll(PDO::FETCH_OBJ);
         <td> $valores->tipo </td>
         <td> $valores->preco </td>
         <td> $valores->marca </td>
+        <td> </td>
         </tr>
         ";
       endforeach;
@@ -158,6 +179,7 @@ $tipo=$base->query("SELECT * FROM tipoproduto")->fetchAll(PDO::FETCH_OBJ);
       <td> $valores->tipo </td>
       <td> $valores->preco </td>
       <td> $valores->marca </td>
+      <td> </td>
       </tr>
       </tbody>
       ";
