@@ -28,7 +28,7 @@ error_reporting(E_ALL);
     font-size: 15px;
   }
 </style>
-<title>Update</title>
+<title>Página Editar</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 

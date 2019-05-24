@@ -67,6 +67,22 @@ $fornecedor=$base->query("SELECT * FROM fornecedor")->fetchAll(PDO::FETCH_OBJ);
     </a>
   </div>
 
+<div class="row" style="margin-top: 20px;">
+  <nav class="col s12 m10 offset-m1 blue-grey lighten-1">
+    <div class="nav-wrapper">
+      <form action="../Controller/pesquisar.php" method="POST">
+        <div class="input-field">
+          <input placeholder="Dia/Mês/Ano" class="blue-grey lighten-1" id="search" type="search" name="buscar" required>
+          <label class="label-icon" for="search" ><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+        <input type="submit" class="btn" value="Pesquisar">
+      </form>
+    </div>
+  </nav>
+</div>
+<br>
+
   <!-- Modal Devedor -->
   <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
@@ -78,14 +94,6 @@ $fornecedor=$base->query("SELECT * FROM fornecedor")->fetchAll(PDO::FETCH_OBJ);
             <input type="text" name="datarecebimento" placeholder="00/00/0000">
             <label>Quantidade:</label>
             <input type="text" name="quantidade" placeholder="Quantidade[Caixa/Unidade]">
-
-            <p>
-              <input name="grupo1" type="radio" id="caixa" />
-              <label for="caixa">Caixa</label>
-
-              <input name="grupo1" type="radio" id="unidade" />
-              <label for="unidade">Unidade</label>
-            </p>
 
             <div class="input-field col s12">
               <form class="">

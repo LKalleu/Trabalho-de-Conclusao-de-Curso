@@ -1,44 +1,32 @@
 <?php
-  require_once ('../Model/conexao.php');
+  require_once ('banco.php');
 
-  $login = $_POST['email'];
-  $senha = $_POST['senha'];
+  session_start();
+      $n1 = isset($_POST['email'])?$_POST['email']:'erro Email';
+      $n2 = isset($_POST['senha'])?$_POST['senha']:'erro Senha';
+      $home = '../View/index.php';
 
-  $sql = $conn->prepare("SELECT * FROM usuario WHERE email = '$login' AND senha = '$senha'");
-  $sql->execute();
-  $num = $sql->rowCount();
-
-
-  if ($num > 0) {
-
-    session_start();
-    $_SESSION["email"] = $login;
-    $_SESSION["senha"] = $senha;
-
-    $verificar = $conn->query("SELECT * FROM usuario");
-
-    while ($linha = $verificar->fetch(PDO::FETCH_ASSOC)) {
-      if ($linha['email'] == $login) {
-        $nivel = $linha['tipoUsuario'];
-
-        switch ($nivel) {
-          case '1':
-            header("location: ../paginas/home/home.php");
-            break;
-
-          case '2';
-            header("location: ../paginas/home/home.php");
-            break;
-
-          case '3';
-            echo "USUARIO COMUM";
-            break;
-
-          default:
-            header("location: ../index.php");
-            break;
+      class login {
+        function valida($n1,$n2,$home){
+        $obj = new Banco();
+        $qry="SELECT * FROM usuario";
+        $result = $obj->exeQuery($qry);
+        foreach ($result as $value){
+          $id = $value['id'];
+        if ($n1 == $value['email'] and $n2 == $value['senha']){
+              $_SESSION['online'] = "ON";
+              $_SESSION['iduser'] = $id;
+              $_SESSION['nome'] = $value['nome'];
+              header("Location:../View/home.php");
+          }else{
+            $home2 = '../View/index.php';
+            header("Location: ".$home2);
+          }
         }
       }
     }
-  }
- ?>
+
+      $obj = new login;
+      $obj-> valida($n1,$n2,$home);
+
+  ?>

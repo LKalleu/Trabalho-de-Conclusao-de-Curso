@@ -11,6 +11,16 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style media="screen">
+      @font-face {
+        font-family: alibabasans;
+        src: url('../Public/Fonts/AlibabaSans/AlibabaSans-Bold.otf');
+      }
+
+      html {
+        font-family: alibabasans;
+      }
+    </style>
   </head>
 
   <body class="blue-grey lighten-2 row">

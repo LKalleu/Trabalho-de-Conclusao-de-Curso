@@ -9,6 +9,7 @@ include '../Model/config.php';
 
 $registro=$base->query("SELECT * FROM devedor")->fetchAll(PDO::FETCH_OBJ);
 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -70,22 +71,36 @@ $registro=$base->query("SELECT * FROM devedor")->fetchAll(PDO::FETCH_OBJ);
     <div class="modal-content">
       <h4 class="center">Adicionar Devedor</h4>
       <form action="../Controller/insert.php" method="POST">
-        <div class="col s12">
-          <div class="col s12">
+        <div class="row">
+          <div class="col s12 m6">
             <label>Nome:</label>
             <input type="text" name="nome" placeholder="Nome">
+          </div>
+          <div class="col s12 m6">
             <label>Email:</label>
             <input type="text" name="email" placeholder="Email">
+          </div>
+          <div class="col s12 m6">
             <label>Senha:</label>
             <input type="text" name="senha" placeholder="Senha">
+          </div>
+          <div class="col s12 m6">
             <label>Contato:</label>
             <input type="text" name="contato" placeholder="Contato">
+          </div>
+          <div class="col s12 m6">
             <label>Rua:</label>
             <input type="text" name="rua" placeholder="Rua">
+          </div>
+          <div class="col s12 m6">
             <label>Bairro:</label>
             <input type="text" name="bairro" placeholder="Bairro">
+          </div>
+          <div class="col s12 m6">
             <label>Numeração:</label>
             <input type="text" name="numeracao" placeholder="Numeração">
+          </div>
+          <div class="col s12 m6">
             <label>CEP:</label>
             <input type="text" name="cep" placeholder="CEP">
           </div>
@@ -102,7 +117,7 @@ $registro=$base->query("SELECT * FROM devedor")->fetchAll(PDO::FETCH_OBJ);
   <!-- Detalhes -->
   <div id="modal2" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <h4 class="center">Detalhes</h4>
+      <h4 class="center">Detalhes/Endereço</h4>
       <form method="POST" id="form-pesquisa" action="">
         Pesquisar: <input type="text" name="pesquisa" id="pesquisa" placeholder="Digite o nome do Devedor...">
       </form>
@@ -151,7 +166,7 @@ $registro=$base->query("SELECT * FROM devedor")->fetchAll(PDO::FETCH_OBJ);
         <td> $pessoa->nome </td>
         <td> $pessoa->email </td>
         <td> $pessoa->contato </td>
-        <td> <a class='btn green' href='../Controller/deletar.php?id= $pessoa->id'>Exibir</a> </td>
+        <td> <a class='btn green modal-trigger' href='../Controller/itensdevedor.php?prod_comprados= $pessoa->prod_comprados'>Exibir</a> </td>
         <td> <a class='btn red' href='../Controller/deletar.php?id= $pessoa->id'><i class='material-icons'>delete_sweep</i></a> </td>
         <td> <a class='btn blue' href='../Controller/editar.php?id= $pessoa->id & nome= $pessoa->nome & email= $pessoa->email & senha= $pessoa->senha & contato= $pessoa->contato & rua= $pessoa->rua & bairro= $pessoa->bairro & numeracao= $pessoa->numeracao & cep= $pessoa->cep'><i class='material-icons'>create</i></a></td>
         </tr>
@@ -180,7 +195,7 @@ $registro=$base->query("SELECT * FROM devedor")->fetchAll(PDO::FETCH_OBJ);
       <td> $pessoa->nome </td>
       <td> $pessoa->email </td>
       <td> $pessoa->contato </td>
-      <td> <a class='green-text' href='../Controller/deletar.php?id= $pessoa->id'>Exibir</a> </td>
+      <td> <a class='green-text modal-trigger' href='itensdevedor.php?prod_comprados= $pessoa->prod_comprados' name = 'exibir'>Exibir</a> </td>
       <td> <a class='red-text' href='../Controller/deletar.php?id= $pessoa->id'>Deletar</a> </td>
       <td> <a class='blue-text' href='../Controller/editar.php?id= $pessoa->id & nome= $pessoa->nome & email= $pessoa->email & senha= $pessoa->senha & contato= $pessoa->contato & rua= $pessoa->rua & bairro= $pessoa->bairro & numeracao= $pessoa->numeracao & cep= $pessoa->cep'>Editar</a></td>
       </tr>
@@ -191,6 +206,7 @@ $registro=$base->query("SELECT * FROM devedor")->fetchAll(PDO::FETCH_OBJ);
 
   </table>
 </div>
+
 
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

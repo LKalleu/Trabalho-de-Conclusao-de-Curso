@@ -139,7 +139,7 @@ $fornecedor=$base->query("SELECT * FROM fornecedor")->fetchAll(PDO::FETCH_OBJ);
         <th>Tipo</th>
         <th>Preço</th>
         <th>Marca</th>
-        <th>Forncedor</th>
+        <th>Fornecedor</th>
       </tr>
     </thead>
 
@@ -153,7 +153,7 @@ $fornecedor=$base->query("SELECT * FROM fornecedor")->fetchAll(PDO::FETCH_OBJ);
         <td> $valores->tipo </td>
         <td> $valores->preco </td>
         <td> $valores->marca </td>
-        <td> </td>
+        <td> $valores->fornecedor </td>
         </tr>
         ";
       endforeach;
